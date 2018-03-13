@@ -8,7 +8,8 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8000
+# vagrantから利用することを想定してhost"0.0.0.0"で起動する
 npm run dev
 
 # build for production with minification
