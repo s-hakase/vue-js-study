@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <h1>Todoリスト</h1>
+    <hr />
+    <div>
+      {{ msg }}
+      <form>
+        <button>追加</button>
+        <button>完了を削除</button>
+        <p>入力: <input type="text"></p>
+        <p>タスク:</p>
+      </form>
+      <div class="task-list">
+        <label class="task-list__item"><input type="checkbox"><button>編集</button>vue-router</label>
+        <label class="task-list__item"><input type="checkbox"><button>編集</button>vuex</label>
+        <label class="task-list__item"><input type="checkbox"><button>編集</button>vue-loader</label>
+        <label class="task-list__item--checked"><input type="checkbox" checked><button>編集</button>awesome-vue</label>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -40,21 +42,25 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
-  font-weight: normal;
+.task-list {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.task-list__item {
+  width: 270px;
+  text-align: left;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+.task-list__item--checked {
+  width: 270px;
+  text-align: left;
+  color: #85a6c6;
 }
 
-a {
-  color: #42b983;
-}
 </style>
